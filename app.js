@@ -5,7 +5,10 @@ const log  = (code) => {
 }
 
 class Instagram {
-    constructor() {
+    constructor(userName, passWord, pageName) {
+        this.userName = userName
+        this.passWord = passWord
+        this.pageName = pageName
         this.typeSpeed = 200
     }
 
@@ -42,8 +45,8 @@ class Instagram {
 
         log('Input Username And Password')
         await this.page.waitForSelector('input[name="username"]')
-        await this.page.type('input[name="username"]', 'mostafatabrizian12@gmail.com', {delay: this.typeSpeed})
-        await this.page.type('input[name="password"]', '$Instagram19931506', {delay: this.typeSpeed})
+        await this.page.type('input[name="username"]', this.userName, {delay: this.typeSpeed})
+        await this.page.type('input[name="password"]', this.passWord, {delay: this.typeSpeed})
         await this.page.click('button.sqdOP.L3NKy.y3zKF')
 
         this.skip_facebook()
@@ -81,7 +84,7 @@ class Instagram {
 
         log('Search')
         await this.page.waitForSelector('input.XTCLo.x3qfX')
-        await this.page.type('input.XTCLo.x3qfX', 'Taylor Swift', {delay: this.typeSpeed})
+        await this.page.type('input.XTCLo.x3qfX', this.pageName, {delay: this.typeSpeed})
         await this.page.waitForTimeout(2000)
         await this.page.evaluate(() => {
             document.querySelectorAll('.-qQT3')[0].click()
@@ -125,7 +128,10 @@ class Instagram {
     }
 }
 
-const taylor = new Instagram();
+const userName = 'mostafatabrizian12@gmail.com' //Or Email
+const passWord = '$Instagram19931506'
+const pageName = 'taylor swift'
+const taylor = new Instagram(userName, passWord, pageName);
 taylor.start()
 
 
