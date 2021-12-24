@@ -128,10 +128,10 @@ class Instagram {
     }
 }
 
-const userName = 'mostafatabrizian12@gmail.com' //Or Email
-const passWord = '$Instagram19931506'
-const pageName = 'taylor swift'
-const taylor = new Instagram(userName, passWord, pageName);
-taylor.start()
+const userName = 'EMAIL_OR_USERNAME'
+const passWord = 'PASSWORD'
+const pageName = 'PROFILE_NAME'
+const newPuppe = new Instagram(userName, passWord, pageName);
+newPuppe.start()
 
 
